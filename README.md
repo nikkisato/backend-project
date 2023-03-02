@@ -25,3 +25,5 @@
   - For example it should look similar to this: `app.get("/my-endpoint", myMiddleware("/my-endpoint), myEndpointController);`
   - How can you do this without immediately invoking that middleware function? HINT: a function that returns a function.
 - [ ] Extract both middleware functions into two separate modules in a folder called /middleware. Ensure both are default exports and functions should be declarations, not expressions.
+
+JSON FILE: https://github.com/Grunet/digestible-wcag-scraping/blob/13e9050bca9c9b29fcdc75ffcd74f84847b386bc/dist/wcag22.json
