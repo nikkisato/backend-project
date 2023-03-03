@@ -27,3 +27,23 @@
 - [ ] Extract both middleware functions into two separate modules in a folder called /middleware. Ensure both are default exports and functions should be declarations, not expressions.
 
 JSON FILE: https://github.com/Grunet/digestible-wcag-scraping/blob/13e9050bca9c9b29fcdc75ffcd74f84847b386bc/dist/wcag22.json
+
+## How to read the WCAG JSON file
+
+- Principles Object
+  - Perceivable
+  - Operable
+  - Understandable
+  - Robust
+    - Guidelines
+      - paraText
+      - successCriteria
+        - links
+          - understand
+          - meet
+          - examples
+        - contentMarkup
+        - id
+        - name
+        - level
+        - examples
