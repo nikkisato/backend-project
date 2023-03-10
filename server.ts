@@ -1,23 +1,26 @@
 import express, { Request, Response } from "express";
 const app = express();
 
+const { getAllData, getDataController } = require("./controllers/serverControllers.ts");
+
 type ResponseData = {
   message: string;
   endingMessage: string;
+};
+
+type DifferentData = {
+  year: number;
+  message: string;
 };
 
 // Variables
 const host = "localhost";
 const port = 8000;
 
-app.get("/", (req, res) => {
-  const responseData: ResponseData = {
-    message: "Testingg",
-    endingMessage: "12",
-  };
+// 1a
+app.get("/", getAllData);
 
-  res.status(400).json(responseData);
-});
+app.get("/getData", getDataController);
 
 app.listen(port, host, () => {
   console.log(`Server is running on http://${host}:${port}`);
