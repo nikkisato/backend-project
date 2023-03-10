@@ -16,8 +16,8 @@
   - [x] Extract your response handlers into modules in a folder called /controllers.
     - For example: `app.get("/my-endpoint", (req, res) => res.json("hello world");`
     - becomes: `app.get("/my-endpoint", myEndpointController);`
-  - [ ] Add the cors middleware to ensure any browser client can have access to (we'll implement basic authentication later on)
-  - [ ] There are two ways to implement middleware in Express.
+  - [x] Add the cors middleware to ensure any browser client can have access to (we'll implement basic authentication later on)
+  - [x] There are two ways to implement middleware in Express.
     - `app.use(myMiddleware);
     - app.get("/my-endpoint", myMiddleware, myEndpointController);`
   - [ ] Implement your own custom middleware that logs information about the request (where the request is coming from, and what endpoint it is seeking). Ensure this middleware is applied to both routes. Remember you will need to invoke the "next" argument or else the response will never be sent back.
