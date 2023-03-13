@@ -2,9 +2,9 @@ import express from "express";
 const app = express();
 const cors = require("cors");
 
-const { getAllData, getDataController } = require("./controllers/serverControllers.ts");
-const logMiddleware = require("./middlewares/middleware-log");
-const requestMiddleware = require("./middlewares/middleware-request");
+import { getAllData, getDataController } from "./controllers/serverControllers";
+import logMiddleware from "./middleware/middleware-log";
+import requestMiddleware from "./middleware/middleware-request";
 
 /* Middleware */
 app.use(cors());
@@ -13,11 +13,9 @@ app.use(cors());
 const host = "localhost";
 const port = 8000;
 
-app.get("/postData", logMiddleware, getAllData);
-// app.get("/", logMiddleware, getAllData);
+app.get("/", logMiddleware, getAllData);
 
-// app.get("/getData", requestMiddleware, getDataController);
-// app.get("/getData", requestMiddleware, getDataController);
+app.get("/getData", requestMiddleware, getDataController);
 
 app.listen(port, host, () => {
   console.log(`Server is running on http://${host}:${port}`);
