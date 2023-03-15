@@ -6,7 +6,7 @@ import { Request, Response, NextFunction } from "express";
 // Remember you will need to invoke the "next" argument
 // or else the response will never be sent back.
 
-function logMiddleware(req: Request, res: Response, next: NextFunction) {
+function log(req: Request, res: Response, next: NextFunction) {
   //where the request is coming from
   console.log("heres the where the request is coming from");
   // what endpoint it is seeking
@@ -14,4 +14,4 @@ function logMiddleware(req: Request, res: Response, next: NextFunction) {
   next();
 }
 
-export default logMiddleware;
+export default log;

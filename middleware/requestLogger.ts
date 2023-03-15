@@ -7,12 +7,20 @@ import { Request, Response, NextFunction } from "express";
 // How can you do this without immediately invoking that middleware function?
 // HINT: a function that returns a function.
 
-export default function requestMiddleware(req: Request, res: Response, next: NextFunction) {
+export function requestLogger1(req: Request, res: Response, next: NextFunction) {
   //where the request is coming from
   console.log("heres the where the request is coming from");
   // what endpoint it is seeking
   console.log(JSON.stringify(req.route));
   next();
+}
+
+/* currying */
+export function requestLogger2(route: string) {
+  return (req: Request, res: Response, next: NextFunction) => {
+    console.log(route);
+    next();
+  };
 }
 
 //in server.ts file
